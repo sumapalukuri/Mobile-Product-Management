@@ -1,0 +1,16 @@
+.container {
+    width: 300px;
+    margin-left: 445px;
+    margin-top: 20px;
+}
+.header {
+    text-align: center;
+    font-weight: 500;
+    color: white;
+    background-color: cadetblue;
+    margin-bottom: 20px;
+    height: 27px;
+    width: 285px;
+    border: 8px solid cadetblue;
+    margin-left: -16px;
+}

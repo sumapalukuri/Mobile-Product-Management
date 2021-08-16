@@ -1,0 +1,38 @@
+<div class="content-wrapper">
+  <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let product of productsList">
+      <mat-card class="example-card" style="background-color: rgb(240, 240, 240)">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title><span style="text-align: center !important;">{{product.name}}</span></mat-card-title>
+        </mat-card-header>
+        <img *ngIf="product.imageUrl" class="image" src="{{product.imageUrl}}" alt="mobile">
+        <img *ngIf="!product.imageUrl" class="image" src="../../../../assets/mobile.jpg" alt="mobile">
+        <mat-card-content>
+          <p style="text-align: center; color: blue;">
+            Price: ₹{{product.price}}
+          </p>
+          <div style="text-align: center;">
+            <span>{{product.memoryLabel}} Memory,&nbsp;</span>
+            <span>{{product.ramLabel}} RAM,&nbsp;</span>
+            <span>{{product.cameraLabel}} Camera</span>
+            
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="accent" (click)="openDialog(product)">Delete</button>
+          <button mat-button color="primary" style="margin-left: 107px;"><a [routerLink]="['/edit-mobile']"
+              [queryParams]="{id: product.id}">Edit</a></button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<div class="example-button-container" style="margin-left:90%;margin-bottom: 0% !important">
+  <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="onClickOfAdd()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<div style="color:blue; text-align: center;" *ngIf="!productsList.length">
+  Products are not available currently. Please try to add one!!
+</div>

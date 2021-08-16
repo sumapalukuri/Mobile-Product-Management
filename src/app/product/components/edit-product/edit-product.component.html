@@ -1,0 +1,39 @@
+<div class="container">
+    <mat-card>
+      <div class="header">Edit Product Details</div>
+      <mat-spinner *ngIf="isLoading" style="margin-left: 77px;"></mat-spinner>
+        <form [formGroup]="editMobileForm" (ngSubmit)="onEdit()" *ngIf="!isLoading" style="margin-left: 31px;">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="name" type="text">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>RAM</mat-label>
+                <mat-select formControlName="ram">
+                  <mat-option *ngFor="let ramDetail of ramDetails" [value]="ramDetail.code">{{ramDetail.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Memory</mat-label>
+                <mat-select formControlName="memory">
+                  <mat-option *ngFor="let memoryDetail of memoryDetails" [value]="memoryDetail.code">{{memoryDetail.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Camera</mat-label>
+                <mat-select formControlName="camera">
+                  <mat-option *ngFor="let detail of cameraDetails" [value]="detail.code">{{detail.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Price</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="price" type="number">
+              </mat-form-field>
+              <div>
+                <button mat-button  color="accent"><a [routerLink]="['/mobiles']">Cancel</a></button>
+                <button mat-raised-button style="background-color: cadetblue; color: white; margin-left: 40px;">Edit</button>
+              </div>
+        </form>
+    </mat-card>
+</div>
+

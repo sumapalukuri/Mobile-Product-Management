@@ -1,0 +1,37 @@
+<div class="login-wrap">
+    <div class="login-html">
+      <label for="tab-1" class="tab"><b>Sign In</b></label>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="login-form">
+          <div class="sign-in-htm">
+            <div class="group">
+              <label for="user" class="label">Username<sup class="required-field">*</sup></label>
+              <input id="user" 
+              type="text" 
+              class="input" 
+              formControlName="username"
+              minlength="3"
+              maxlength="15"
+              required>
+            </div>
+            <div class="group">
+              <label for="pass" class="label">Password<sup class="required-field">*</sup></label>
+              <input id="pass" 
+              type="password"
+              class="input" 
+              data-type="password" 
+              formControlName="password"
+              minlength="3"
+              maxlength="20"
+              required>
+            </div>
+            <div style="visibility: hidden;"><span style="color: rgb(206, 197, 197)">Note: (Must contain atleast one capital, one small, one number and a special character)</span></div>
+            <div class="group">
+              <button mat-raised-button color="accent" class="button; button-resize" [disabled]='!loginForm.valid'>Sign
+                In</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

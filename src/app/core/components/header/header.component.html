@@ -1,0 +1,9 @@
+<mat-toolbar style="background-color: cadetblue; color: white;" *ngIf="router.url !== '/login'">
+    <span style="margin-left: 500px;
+    font-weight: bold;">App Centric</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" style="margin-right: 20px;" (click)="onLogout()">
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Logout</span>
+      </button>
+  </mat-toolbar>
